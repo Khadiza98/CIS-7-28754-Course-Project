@@ -124,7 +124,7 @@ string encrypt(const string& plaintext, const string& keyword) {
     string key = keyProcessor(plaintext, keyword); // Generate the matching key
     string ciphertext = ""; // To store the encrypted result
 
-    for (size_t i = 0; i < plaintext.size(); i++) {
+    for (int i = 0; i < plaintext.size(); i++) {
         if (isalpha(plaintext[i])) { // Encrypt only letters
             char offset = isupper(plaintext[i]) ? 'A' : 'a'; 
             ciphertext += ((plaintext[i] - offset + 
@@ -147,7 +147,7 @@ string decrypt(const string& ciphertext, const string& keyword) {
     string key = keyProcessor(ciphertext, keyword); // Generate the matching key
     string plaintext = ""; // To store the decrypted result
 
-    for (size_t i = 0; i < ciphertext.size(); i++) {
+    for (int i = 0; i < ciphertext.size(); i++) {
         if (isalpha(ciphertext[i])) { // Decrypt only letters
             // Check case (uppercase or lowercase)
             char offset = isupper(ciphertext[i]) ? 'A' : 'a'; 
